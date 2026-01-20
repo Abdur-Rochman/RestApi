@@ -118,9 +118,20 @@ Server Error
 - Endpoint **create event** dan **join event** dilindungi menggunakan **Laravel Sanctum** untuk memastikan hanya user terautentikasi yang dapat melakukan aksi tersebut.
 
 - Relasi antara **User** dan **Event** menggunakan **many-to-many relationship** dengan tabel pivot `event_user`.
-
 - Sistem mencegah user untuk **join event yang sama lebih dari satu kali** dengan melakukan pengecekan data pada tabel pivot sebelum proses attach.
 
 - API menggunakan **Laravel API Resource** dan **pagination** untuk menjaga konsistensi struktur response dan efisiensi pengambilan data.
 
 - Seluruh error API diformat secara **konsisten** menggunakan **global exception handling** pada Laravel 12.
+## 🧠 Jawaban Pertanyaan Wajib
+### 1. Bagian tersulit dari assignment ini?
+
+Menjaga konsistensi error response dan memastikan user tidak bisa join event yang sama lebih dari satu kali.
+
+### 2. Jika diberi waktu 1 minggu, apa yang akan diperbaiki?
+
+Menambahkan role management, policy authorization, dan unit testing.
+
+### 3. Kenapa memilih pendekatan teknis ini?
+
+Karena Sanctum ringan, cocok untuk SPA/mobile, dan desain API dipisahkan antara public dan protected agar mudah diintegrasikan dengan frontend.
